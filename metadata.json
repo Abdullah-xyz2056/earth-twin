@@ -1,0 +1,5 @@
+{
+  "name": "TerraView: MapLibre Edition",
+  "description": "A no-build 3D planetary viewer using MapLibre GL JS, NASA Blue Marble, and OpenFreeMap.",
+  "requestFramePermissions": ["geolocation"]
+}

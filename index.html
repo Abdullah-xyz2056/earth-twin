@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Twin | Digital Twin Engine</title>
+    <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="map"></div>
+
+    <!-- Loader -->
+    <div id="loader" class="overlay">
+        <div class="spinner"></div>
+        <p>INITIALIZING PLANETARY ENGINE...</p>
+    </div>
+
+    <!-- Top Left: Title Panel -->
+    <div class="panel title-panel">
+        <span class="label-micro">DIGITAL TWIN</span>
+        <h1>Earth Twin</h1>
+        <p>Orbit to street level with NASA orbital imagery, public terrain, and 3D city detail rendered from open data.</p>
+    </div>
+
+    <!-- Left Sidebar: Flight Deck -->
+    <div class="sidebar">
+        <div class="panel-section">
+            <span class="label-micro">FLIGHT DECK</span>
+            <div class="grid-2">
+                <button id="btn-orbital">Orbital View</button>
+                <button id="btn-mode">Night View</button>
+                <button id="btn-terrain">Toggle Terrain</button>
+                <button id="btn-spin">Toggle Spin</button>
+                <button id="btn-clouds">Clouds</button>
+                <button id="btn-atmosphere">Atmosphere</button>
+            </div>
+            <button id="btn-locate" class="btn-large">Locate Me</button>
+        </div>
+
+        <div class="panel-section">
+            <span class="label-micro">QUICK DESCENTS</span>
+            <div class="grid-2">
+                <button class="preset-btn" data-lat="35.681" data-lon="139.767" data-zoom="15.8">Tokyo</button>
+                <button class="preset-btn" data-lat="40.712" data-lon="-74.006" data-zoom="15.8">New York</button>
+                <button class="preset-btn" data-lat="-22.951" data-lon="-43.210" data-zoom="15.8">Rio</button>
+                <button class="preset-btn" data-lat="-1.292" data-lon="36.821" data-zoom="15.8">Nairobi</button>
+            </div>
+            <button class="preset-btn btn-full" data-lat="37.774" data-lon="-122.419" data-zoom="15.8">San Francisco</button>
+        </div>
+    </div>
+
+    <!-- Top Right: Status Indicators -->
+    <div class="status-container">
+        <div class="status-box">
+            <span class="label-micro">MODE</span>
+            <span id="status-mode" class="value">Orbital</span>
+        </div>
+        <div class="status-box">
+            <span class="label-micro">ZOOM</span>
+            <span id="status-zoom" class="value">1.82</span>
+        </div>
+        <div class="status-box">
+            <span class="label-micro">TERRAIN</span>
+            <span id="status-terrain" class="value">Off</span>
+        </div>
+    </div>
+
+    <!-- Bottom: Footer Info -->
+    <div class="footer">
+        <div class="footer-action">
+            <span>Digital Earth</span>
+            <span class="arrow">›</span>
+        </div>
+        <p>Wheel to zoom, drag to pan, right-drag to tilt. Orbital imagery uses NASA Blue Marble, VIIRS true-color, and VIIRS nighttime imagery plus city lights. Streets/buildings: OpenStreetMap via OpenFreeMap.</p>
+    </div>
+
+    <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
